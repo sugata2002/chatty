@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face { 
+    font-family: "badtext"; 
+    src: url("./assets/AmaticSC.ttf"); 
+} 
+
+@font-face { 
+    font-family: "landingtitle"; 
+    src: url("./assets/RedditMono-Bold.ttf"); 
+} 
