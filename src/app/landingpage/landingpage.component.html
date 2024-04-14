@@ -20,7 +20,35 @@
         <fa-icon *ngIf="!isIconToggled" [icon]="fax"></fa-icon>
       </div>
       <div *ngIf="!isIconToggled" class="w-48 h-56 sm:rounded-lg sm:bg-gradient-to-br from-purple-800 to-black lg:hidden  sm:fixed sm:right-1   sm:top-14">
-        hhh
+        <div class="m-6">
+          <ul class="font-landingbold cursor-pointer ">
+            <li class="hover:transition-all hover:duration-1000 hover:ease-in-out hover:transform link link-underline link-underline-black transition duration-1000 ease-in-out transform">
+              <fa-icon class="text-xl" [icon]="fahome"></fa-icon> 
+              <span class="pl-5 text-xl">Home</span>
+            </li>
+            <li class=" pt-3 hover:transition-all hover:duration-1000 hover:ease-in-out hover:transform link link-underline link-underline-black transition duration-1000 ease-in-out transform">
+              <fa-icon class="text-xl" [icon]="facircleinfo"></fa-icon> 
+              <span class="pl-5 text-xl">About</span>
+            </li>
+            <li class=" pt-3 hover:transition-all hover:duration-1000 hover:ease-in-out hover:transform link link-underline link-underline-black transition duration-1000 ease-in-out transform">
+              <fa-icon class="text-xl" [icon]="faarrowdown"></fa-icon> 
+              <span class="pl-5 text-xl">Download</span>
+            </li>
+            <div class="flex items-center  pt-7">
+              <div class="h-0.5 bg-gray-500 w-44"></div>
+            </div>
+            <div class="flex  pt-4 gap-2">
+              <button routerLink="/login"
+              class="border-white border-[0.1rem] rounded-lg w-20 hover:bg-white hover:text-black">
+              Login
+            </button>
+            <button routerLink="signup"
+              class="border-white border-[0.1rem] rounded-lg w-20 hover:bg-white hover:text-black">
+              Signup
+            </button>
+            </div>
+          </ul>
+        </div>
       </div>
       <div class="flex gap-2 sm:hidden lg:flex">
         <button routerLink="/login"
