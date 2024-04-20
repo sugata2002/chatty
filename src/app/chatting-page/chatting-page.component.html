@@ -1,13 +1,29 @@
 <div class="bg-black min-h-screen bg-cover sm:bg-center bg-no-repeat ">
     <div id="slidbar"
-        class="hover:w-60 w-24 group duration-500 transform ease-in-out rounded-lg min-h-screen  bg-[#0c0c0d]">
+        class="hover:w-60 w-24 group overflow-y-hidden duration-500 transform ease-in-out rounded-lg min-h-screen  bg-[#0c0c0d]">
         <span class="flex justify-center transform duration-200 pt-7"><img class="w-16 group-hover:w-28  duration-300"
-                src="../../assets/chatty-high-resolution-logo-white-transparent.png" ></span>
-                <div class="mt-12 text-white  mx-7 text-3xl group-hover:hidden ">
-                    <fa-icon  [icon]="famagnification"></fa-icon>
+                src="../../assets/chatty-high-resolution-logo-white-transparent.png"></span>
+        <div class="mt-12 text-white  mx-7 text-3xl group-hover:hidden ">
+            <fa-icon [icon]="famagnification"></fa-icon>
+        </div>
+        <div class="group-hover:flex group-hover:justify-center  ">
+            <input class="bg-[#1a1a1d] hidden group-hover:block h-8  rounded-lg pl-3 mt-12 w-56 text-white" type="text"
+                placeholder="Search..">
+        </div>
+        <div class="text-white mx-6 pt-7">
+
+            <span class="font-mono group-hover:flex group-hover:justify-center">Friends</span>
+
+        </div>
+        <div class="mx-6 text-white pt-9 overflow-x-auto">
+            <div class=" group-hover:block ">
+                <div class="flex text-2xl cursor-pointer mb-7 " *ngFor="let item of items">
+                    <img class="w-12 h-11 group-hover:w-12 rounded-xl group-hover:block " [src]="item.image">
+                    <span class="hidden group-hover:block pt-1 pl-3 font-mono">{{item.name}}</span>
                 </div>
-                <div class="group-hover:flex group-hover:justify-center  ">
-                    <input class="bg-[#1a1a1d] hidden group-hover:block h-8 duration-1000 rounded-lg pl-3 mt-12 w-56 text-white" type="text" placeholder="Search..">
-                </div>
+            </div>
+        </div>
+        
     </div>
+
 </div>

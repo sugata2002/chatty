@@ -1,3 +1,4 @@
+import { NgClass, NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCoffee , faArrowRight , faBars, fas , faX , faHome , faCircleInfo , faArrowDown , faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
@@ -6,7 +7,7 @@ import { faCoffee , faArrowRight , faBars, fas , faX , faHome , faCircleInfo , f
 @Component({
   selector: 'app-chatting-page',
   standalone: true,
-  imports: [FontAwesomeModule],
+  imports: [FontAwesomeModule , NgFor , NgClass],
   templateUrl: './chatting-page.component.html',
   styleUrl: './chatting-page.component.scss'
 })
@@ -20,4 +21,22 @@ export class ChattingPageComponent {
   faarrowdown = faArrowDown
   facircleinfo = faCircleInfo
   fax = faX;
+
+  items = [
+    { name: 'soniya dey', image: '../../assets/girlimg.jpg' },
+    { name: 'soniya dey', image: '../../assets/girlimg.jpg' },
+    { name: 'soniya dey', image: '../../assets/girlimg.jpg' },
+    { name: 'soniya dey', image: '../../assets/girlimg.jpg' },
+    { name: 'soniya dey', image: '../../assets/girlimg.jpg' },
+    { name: 'soniya dey', image: '../../assets/girlimg.jpg' },
+    { name: 'soniya dey', image: '../../assets/girlimg.jpg' },
+    { name: 'soniya dey', image: '../../assets/girlimg.jpg' },
+    { name: 'soniya dey', image: '../../assets/girlimg.jpg' },
+    { name: 'soniya dey', image: '../../assets/girlimg.jpg' },
+    { name: 'soniya dey', image: '../../assets/girlimg.jpg' },
+    { name: 'soniya dey', image: '../../assets/girlimg.jpg' },
+    { name: 'soniya dey', image: '../../assets/girlimg.jpg' },
+    { name: 'soniya dey', image: '../../assets/girlimg.jpg' },
+    // Add more items if needed
+  ];
 }
