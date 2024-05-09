@@ -1,29 +1,26 @@
-<div class="bg-black min-h-screen bg-cover sm:bg-center bg-no-repeat ">
-    <div id="slidbar"
-        class="hover:w-60 w-24 group overflow-y-hidden duration-500 transform ease-in-out rounded-lg min-h-screen  bg-[#0c0c0d]">
-        <span class="flex justify-center transform duration-200 pt-7"><img class="w-16 group-hover:w-28  duration-300"
-                src="../../assets/chatty-high-resolution-logo-white-transparent.png"></span>
-        <div class="mt-12 text-white  mx-7 text-3xl group-hover:hidden ">
-            <fa-icon [icon]="famagnification"></fa-icon>
+ <div class="bg-[#23272e] min-h-screen ">
+    <div class="min-h-screen w-24 border-r-[2px] border-gray-700 flex flex-col">
+        <div class="h-10 w-full pt-3 flex justify-center">
+            <img class="w-16 h-6" src="../../assets/chatty-high-resolution-logo-white-transparent.png" >
         </div>
-        <div class="group-hover:flex group-hover:justify-center  ">
-            <input class="bg-[#1a1a1d] hidden group-hover:block h-8  rounded-lg pl-3 mt-12 w-56 text-white" type="text"
-                placeholder="Search..">
-        </div>
-        <div class="text-white mx-6 pt-7">
-
-            <span class="font-mono group-hover:flex group-hover:justify-center">Friends</span>
-
-        </div>
-        <div class="mx-6 text-white pt-9 overflow-x-auto">
-            <div class=" group-hover:block ">
-                <div class="flex text-2xl cursor-pointer mb-7 " *ngFor="let item of items">
-                    <img class="w-12 h-11 group-hover:w-12 rounded-xl group-hover:block " [src]="item.image">
-                    <span class="hidden group-hover:block pt-1 pl-3 font-mono">{{item.name}}</span>
+        <div class="flex-grow flex justify-center items-center">
+            <div class="bg-[#11151b] w-[3.5rem] text-white text-center rounded-lg">
+                <div class="pt-3 w-full">
+                    <fa-icon class="hover:text-[#695cff] w-28" [icon]="faComment"></fa-icon>
+                </div>
+                <div class="pt-3">
+                    <fa-icon class="hover:text-[#695cff]" [icon]="faPlay"></fa-icon>
+                </div>
+                <div class="pt-3">
+                    <fa-icon class="hover:text-[#695cff]" [icon]="faGear"></fa-icon>
+                </div>
+                <span class="border-b-2 border-gray-700 block pt-6 "></span>
+                <div class="pt-4 pb-2 hover:text-[#695cff]">
+                    <fa-icon [icon]="faArrowRightFromBracket"></fa-icon>
                 </div>
             </div>
+            
         </div>
-        
     </div>
-
-</div>
+    
+ </div>
