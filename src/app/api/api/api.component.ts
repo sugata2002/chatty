@@ -16,16 +16,17 @@ import { Observable } from 'rxjs';
 export class ApiComponent {    
   constructor(private http:HttpClient , private route:Router) { }
   baseurl = "http://localhost:8080/"
-
-  tokencheck ():Observable<any>{
-    return this.http.get(this.baseurl + "api/user/check", { withCredentials: true });
+  isAuthenticated = true;
+  tokencheck(): Observable<{ message: string }> {
+    // Make a request to your backend API to check the token
+    return this.http.get<{ message: string }>("http://localhost:8080/api/user/check", { withCredentials: true });
   }
 
   login (data:any){
     this.http.post(this.baseurl + "api/user/login" , data , {
       withCredentials:true 
     }).subscribe(()=>{
-      this.route.navigate(["chat"])
+      this.route.navigate(["/chat"])
     })
   }
 
@@ -33,7 +34,7 @@ export class ApiComponent {
     this.http.post(this.baseurl + "api/user/register" , data , {
       withCredentials:true
     }).subscribe(()=>{
-      this.route.navigate(['chat'])
+      this.route.navigate(['/chat'])
     })
   }
 }

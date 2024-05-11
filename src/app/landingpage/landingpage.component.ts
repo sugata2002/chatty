@@ -6,7 +6,7 @@ import { faCoffee , faArrowRight , faBars, fas , faX , faHome , faCircleInfo , f
 @Component({
   selector: 'app-landingpage',
   standalone: true,
-  imports: [LandingpageComponent , FontAwesomeModule ,RouterModule ,NgIf ],
+  imports: [LandingpageComponent , FontAwesomeModule ,RouterModule ,NgIf ,  ],
   templateUrl: './landingpage.component.html',
   styleUrl: './landingpage.component.scss'
 })
@@ -20,12 +20,17 @@ export class LandingpageComponent {
   facircleinfo = faCircleInfo
   fax = faX;
   isIconToggled: boolean = true;
-
+    constructor(private route:Router){}
   toggleIcon() {
     this.isIconToggled = !this.isIconToggled;
   }
-
-
+  onclick(){
+    
+    this.route.navigate(['/chat']);
+  
+    
+  }
+ 
   
 
 }
