@@ -1,5 +1,5 @@
 import { NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule  } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCoffee , faArrowRight , faBars, fas , faX , faHome , faCircleInfo , faArrowDown} from '@fortawesome/free-solid-svg-icons';
@@ -13,7 +13,7 @@ import { CookieService } from 'ngx-cookie-service';
   templateUrl: './landingpage.component.html',
   styleUrl: './landingpage.component.scss'
 })
-export class LandingpageComponent   {
+export class LandingpageComponent implements OnInit  {
   faCoffee = faCoffee;
   faArrowRight = faArrowRight;
   faCoffees = [fas, faCoffee];
@@ -25,11 +25,23 @@ export class LandingpageComponent   {
   isIconToggled: boolean = true;
   isAuth:boolean = true;
   constructor(private route:Router , private api:ApiComponent ,private cookies:CookieService){
-    this.isAuth = this.cookies.check("Token");
+    // this.isAuth = this.cookies.check("Token");
   }
   
+  ngOnInit() {
+    this.isAuth = this.cookies.check("Token");
+  }
+
   toggleIcon() {
     this.isIconToggled = !this.isIconToggled;
+  }
+
+  logout() {
+    this.api.logout().subscribe(() => {
+      this.isAuth = false; 
+    }, error => {
+      console.error("Logout failed:", error);
+    });
   }
 
   togglelogout(){

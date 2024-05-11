@@ -15,11 +15,17 @@ import { Observable } from 'rxjs';
 })
 export class ApiComponent {    
   constructor(private http:HttpClient , private route:Router) { }
+
   baseurl = "http://localhost:8080/"
   isAuthenticated = true;
+
+  //------------------------- api starts --------------------
   tokencheck(): Observable<{ message: string }> {
-    // Make a request to your backend API to check the token
     return this.http.get<{ message: string }>(this.baseurl+"api/user/check", { withCredentials: true });
+  }
+
+  logout(): Observable<boolean> {
+    return this.http.get<boolean>(this.baseurl + "api/user/logout", { withCredentials: true });
   }
 
   login (data:any){
