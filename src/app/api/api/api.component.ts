@@ -19,7 +19,7 @@ export class ApiComponent {
   isAuthenticated = true;
   tokencheck(): Observable<{ message: string }> {
     // Make a request to your backend API to check the token
-    return this.http.get<{ message: string }>("http://localhost:8080/api/user/check", { withCredentials: true });
+    return this.http.get<{ message: string }>(this.baseurl+"/api/user/check", { withCredentials: true });
   }
 
   login (data:any){
