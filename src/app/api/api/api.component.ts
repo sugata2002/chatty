@@ -17,7 +17,7 @@ export class ApiComponent {
   constructor(private http:HttpClient , private route:Router) { }
 
   // baseurl = "http://localhost:8080/"
-  baseurl = "https://dispatch-acknowledged-alberta-champion.trycloudflare.com"
+  baseurl = "https://dispatch-acknowledged-alberta-champion.trycloudflare.com/"
   isAuthenticated = true;
 
   //------------------------- api starts --------------------
