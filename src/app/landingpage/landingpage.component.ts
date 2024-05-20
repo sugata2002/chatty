@@ -1,5 +1,5 @@
-import { NgIf } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { NgIf, isPlatformBrowser } from '@angular/common';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { Router, RouterModule  } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCoffee , faArrowRight , faBars, fas , faX , faHome , faCircleInfo , faArrowDown} from '@fortawesome/free-solid-svg-icons';
@@ -24,12 +24,14 @@ export class LandingpageComponent implements OnInit  {
   fax = faX;
   isIconToggled: boolean = true;
   isAuth:boolean = true;
-  constructor(private route:Router , private api:ApiComponent ,private cookies:CookieService){
+  constructor(private route:Router , private api:ApiComponent ,private cookies:CookieService ,@Inject(PLATFORM_ID) private platformId: Object){
     // this.isAuth = this.cookies.check("Token");
   }
   
   ngOnInit() {
-    this.isAuth = this.cookies.check("Token");
+    if (isPlatformBrowser(this.platformId)) {
+      this.isAuth = !!localStorage.getItem("token");
+    }
   }
 
   toggleIcon() {
@@ -38,6 +40,7 @@ export class LandingpageComponent implements OnInit  {
 
   logout() {
     this.api.logout().subscribe(() => {
+      localStorage.removeItem("token")
       this.isAuth = false; 
     }, error => {
       console.error("Logout failed:", error);

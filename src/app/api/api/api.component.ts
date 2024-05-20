@@ -16,50 +16,53 @@ import { Observable } from 'rxjs';
 export class ApiComponent {    
   constructor(private http:HttpClient , private route:Router) { }
 
-  // baseurl = "http://localhost:9100/"
-  baseurl = "https://chattyb-34.vercel.app/"
+  baseurl = "http://localhost:9100/"
+  // baseurl = "https://chattyb-34.vercel.app/"
   isAuthenticated = true;
-
-  getCookie(name: string): string {
-    const nameLenPlus = (name.length + 1);
-    return (
-      document.cookie
-        .split(';')
-        .map(c => c.trim())
-        .filter(cookie => {
-          return cookie.substring(0, nameLenPlus) === `${name}=`;
-        })
-        .map(cookie => {
-          return decodeURIComponent(cookie.substring(nameLenPlus));
-        })[0] || ''
-    ) as string;
-  }
-  
 
   //------------------------- api starts --------------------
   tokencheck(): Observable<{ message: string }> {
     return this.http.get<{ message: string }>(this.baseurl+"api/user/check", { withCredentials: true });
   }
 
+  tokench(data :any):Observable<any>{
+    // return this.http.get<any>(this.baseurl + "api/user/check", data);
+    const url = `${this.baseurl}api/user/check?token=${data}`;
+  
+    // Make the HTTP GET request with the constructed URL
+    return this.http.get<any>(url);
+  }
+
   logout(): Observable<boolean> {
     return this.http.get<boolean>(this.baseurl + "api/user/logout", { withCredentials: true });
   }
-
-  login (data:any){
-    this.http.post(this.baseurl + "api/user/login" , data , {
-      withCredentials:true 
-    }).subscribe(()=>{
-      this.route.navigate(["/chat"])
-    })
+  login(data: any) {
+    this.http.post(this.baseurl + "api/user/login", data, {
+      withCredentials: true
+    }).subscribe((res: any) => {
+      if (res.tokens && res) {
+        // Set token in local storage
+        localStorage.setItem('token', res.tokens);
+        // Navigate to '/chat'
+        this.route.navigate(["/chat"]);
+      } else {
+        // Handle error if token is not received
+      }
+    });
   }
-
-  signup(data:any){
-    this.http.post(this.baseurl + "api/user/register" , data , {
-      withCredentials:true
-    }).subscribe(()=>{
-      this.route.navigate(['/chat'])
-    })
+  
+  signup(data: any) {
+    this.http.post(this.baseurl + "api/user/register", data, {
+      withCredentials: true
+    }).subscribe((res: any) => {
+      if (res.tokens && res) {
+        localStorage.setItem('token', res.tokens);
+        this.route.navigate(['/chat']);
+      } else {
+        // Handle error if token is not received
+      }
+    });
   }
+  
 }
-
 
