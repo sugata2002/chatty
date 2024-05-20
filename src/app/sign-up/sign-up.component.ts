@@ -41,7 +41,7 @@ export class SignUpComponent {
     }
     if(!isEmpty){
       this.isLoading =true
-      let up = this.api.signup(user)
+     this.api.signup(user)
     }
   }
 } 

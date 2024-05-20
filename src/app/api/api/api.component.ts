@@ -16,14 +16,12 @@ import { Observable } from 'rxjs';
 export class ApiComponent {    
   constructor(private http:HttpClient , private route:Router) { }
 
-  // baseurl = "http://localhost:9100/"
-  baseurl = "https://chattyb-34.vercel.app/"
+  baseurl = "http://localhost:9100/"
+  // baseurl = "https://chattyb-34.vercel.app/"
   isAuthenticated = true;
 
   //------------------------- api starts --------------------
-  tokencheck(): Observable<{ message: string }> {
-    return this.http.get<{ message: string }>(this.baseurl+"api/user/check", { withCredentials: true });
-  }
+ 
 
   tokench(data :any):Observable<any>{
     // return this.http.get<any>(this.baseurl + "api/user/check", data);

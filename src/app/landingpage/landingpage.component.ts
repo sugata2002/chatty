@@ -47,11 +47,11 @@ export class LandingpageComponent implements OnInit  {
     });
   }
 
-  togglelogout(){
-    this.api.tokencheck().subscribe((res)=>{
-      this.isAuth = res.message === "true"
-    })
-  }
+  // togglelogout(){
+  //   this.api.tokench().subscribe((res)=>{
+  //     this.isAuth = res.message === "true"
+  //   })
+  // }
 
   onclick(){
     
