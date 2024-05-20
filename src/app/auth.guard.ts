@@ -16,7 +16,8 @@ export class AuthGuard implements CanActivate {
     state: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
     // First, check if the token exists in cookies
-    const tokenExists = this.cookieService.check('Token');
+    
+    const tokenExists = this.apiService.getCookie('Token');
 
     if (!tokenExists) {
       // Token not found in cookies, route to 404
