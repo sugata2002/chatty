@@ -46,7 +46,7 @@ The application architecture consists of three main parts:
 ## Setup
 
 ### Prerequisites
-
+- Angular
 - Node.js
 - Angular CLI
 - MongoDB Atlas account
