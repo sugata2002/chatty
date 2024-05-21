@@ -62,11 +62,6 @@ The application architecture consists of three main parts:
 ### Contributing
 Contributions are welcome! Please fork the repository and create a pull request with your changes.
 
-### Additional Notes
-
-- Make sure to replace placeholders like `path/to/architecture-diagram.png` and `your-username` with actual values.
-- Ensure the `.env` file is properly configured with your MongoDB URI and JWT secret.
-
 ## Authors
 
 - [@sugata2002](https://www.github.com/sugata2002)
