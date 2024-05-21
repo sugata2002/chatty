@@ -1,27 +1,73 @@
-# Chatty
+# Chat Application Chatty
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.2.
+This is a real-time chat application built using Angular for the frontend, Node.js for the backend, Socket.IO for real-time communication, and MongoDB Atlas for the database.
 
-## Development server
+## Table of Contents
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Architecture](#Architecture)
+- [Features](#features)
+- [Technologies](#technologies)
+- [Setup](#setup)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Code scaffolding
+## Architecture
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The application architecture consists of three main parts:
 
-## Build
+1. **Frontend (Angular App)**:
+   - The user interface of the chat application.
+   - Manages user sessions using local storage.
+   - Communicates with the backend via Socket.IO for real-time updates and HTTP requests for other interactions.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+2. **Backend (Node.js API)**:
+   - Handles client requests and manages authentication and message services.
+   - Communicates with the frontend using Socket.IO and JWT tokens for secure data transmission.
+   - Interacts with the MongoDB Atlas database to store and retrieve data.
 
-## Running unit tests
+3. **Database (MongoDB Atlas)**:
+   - A cloud-based NoSQL database to store user information and chat messages.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![Architecture Diagram](./diagram-export-5-20-2024-1_18_08-PM.png)
 
-## Running end-to-end tests
+## Features
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- **Real-Time Messaging**: Instant messaging with Socket.IO for real-time communication.
+- **User Authentication**: Secure login and registration using JWT tokens.
+- **Persistent Storage**: Messages and user data are stored in MongoDB Atlas.
 
-## Further help
+## Technologies
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- **Frontend**: Angular, Socket.IO-client
+- **Backend**: Node.js, Express.js, Socket.IO, JWT
+- **Database**: MongoDB Atlas
+
+## Setup
+
+### Prerequisites
+
+- Node.js
+- Angular CLI
+- MongoDB Atlas account
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/chat-application.git
+   cd chat-application
+
+### Contributing
+Contributions are welcome! Please fork the repository and create a pull request with your changes.
+
+### Additional Notes
+
+- Make sure to replace placeholders like `path/to/architecture-diagram.png` and `your-username` with actual values.
+- Ensure the `.env` file is properly configured with your MongoDB URI and JWT secret.
+
+## Authors
+
+- [@sugata2002](https://www.github.com/sugata2002)
+
