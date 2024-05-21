@@ -56,8 +56,8 @@ The application architecture consists of three main parts:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/chat-application.git
-   cd chat-application
+   git clone https://github.com/sugata2002/chatty.git
+   cd chatty
 
 ### Contributing
 Contributions are welcome! Please fork the repository and create a pull request with your changes.
