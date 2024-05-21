@@ -40,7 +40,7 @@ export class LandingpageComponent implements OnInit  {
 
   logout() {
     this.api.logout().subscribe(() => {
-      localStorage.removeItem("token")
+      localStorage.clear()
       this.isAuth = false; 
     }, error => {
       console.error("Logout failed:", error);

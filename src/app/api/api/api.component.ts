@@ -19,6 +19,7 @@ export class ApiComponent {
   // baseurl = "http://localhost:9100/"
   baseurl = "https://chattyb-34.vercel.app/"
   isAuthenticated = true;
+  username = "";
 
   //------------------------- api starts --------------------
  
@@ -38,6 +39,8 @@ export class ApiComponent {
     this.http.post(this.baseurl + "api/user/login", data, {
       withCredentials: true
     }).subscribe((res: any) => {
+      localStorage.setItem('fname' ,  res.fullName );
+      
       if (res.tokens && res) {
         // Set token in local storage
         localStorage.setItem('token', res.tokens);

@@ -2,6 +2,9 @@ import { NgClass, NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCoffee , faArrowRight , faBars, fas , faX , faHome ,faPlay , faGear, faCircleInfo , faArrowDown , faMagnifyingGlass , faArrowRightFromBracket ,faComment} from '@fortawesome/free-solid-svg-icons';
+import { ApiComponent } from '../api/api/api.component';
+import { routes } from '../app.routes';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -28,17 +31,18 @@ export class ChattingPageComponent {
   faGear =faGear
   // icons end
 
+  constructor(private api :ApiComponent , private route:Router){}
 
-  // api
-  items = [
-    { name: 'soniya dey', image: '../../assets/girlimg.jpg' },
+  fname = localStorage.getItem("fname");
 
-    // Add more items if needed
-  ];
-  // end 
-
-  // for tooltip
-  showTooltip = false;
-  tooltipText = 'Use @ before using username or use name to search';
-  // end tooltip 
+  logout() {
+    this.api.logout().subscribe(() => {
+      localStorage.clear()
+      
+      this.route.navigate(["/"])
+    }, error => {
+      console.error("Logout failed:", error);
+    });
+  }
+ 
 }
