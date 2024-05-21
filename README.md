@@ -30,6 +30,7 @@ The application architecture consists of three main parts:
    - A cloud-based NoSQL database to store user information and chat messages.
 
 4. **Architecture Diagram**:
+
 ![Architecture Diagram](./diagram-export-5-20-2024-1_18_08-PM.png)
 
 ## Features
