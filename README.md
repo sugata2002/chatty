@@ -10,7 +10,7 @@ This is a real-time chat application built using Angular for the frontend, Node.
 - [Setup](#setup)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
+<!-- - [License](#license) -->
 
 ## Architecture
 
